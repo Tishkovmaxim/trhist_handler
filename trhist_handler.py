@@ -41,9 +41,18 @@ def trhist_file_handler(file : str, val = "p") ->pd.core.frame.DataFrame:
         if((i - skiprow) % (all_trhists_block+1) == 0):
             out_dict["t"].append(float(lines[i]))
             for j in range(numofcurves):
-                frst_row = list(map(float, lines[i + j*rows_of_one_trhist+  1].split()))
-                scnd_row = list(map(float, lines[i + j*rows_of_one_trhist+  2].split()))
-                thrd_row = list(map(float, lines[i + j*rows_of_one_trhist+  3].split()))
+                try:
+                    frst_row = list(map(float, lines[i + j*rows_of_one_trhist+  1].split()))
+                except:
+                    frst_row = [0,0,0,0,0,0]
+                try:
+                    scnd_row = list(map(float, lines[i + j*rows_of_one_trhist+  2].split()))
+                except:
+                    scnd_row = [0,0,0,0,0,0]
+                try:
+                    thrd_row = list(map(float, lines[i + j*rows_of_one_trhist+  3].split()))
+                except:
+                    thrd_row = [0, 0, 0, 0, 0, 0]
                 loc_rows = [frst_row,scnd_row,thrd_row]
                 if val != "p":
                     extracted_value = loc_rows[pointer[0]][pointer[1]]
