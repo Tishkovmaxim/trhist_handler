@@ -1,4 +1,4 @@
-# TRHIST_HADLER
+# TRHIST_HANDLER
 This code provide extraction data from LS-DYNA trhist file to Pandas DataFrame
 Code automaticly detect number of passed trhist sensors and number of passed values.
 
