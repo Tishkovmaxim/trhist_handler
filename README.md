@@ -21,3 +21,7 @@ The following keys are currently available:
 * "rvol" - reference volume
 * "active" - element number
 * "p" - pressure (this value is calculated by (sx + sy + sz)/3)
+
+#requirements
+- pandas
+- math
